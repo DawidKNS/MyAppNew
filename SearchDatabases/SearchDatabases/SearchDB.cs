@@ -36,7 +36,7 @@ namespace SearchDatabases
                 }
 
                 //select
-                string queryEmployee = "SELECT * from employeeData";
+                string queryEmployee = "SELECT imie,Nazwisko,Status,Stanowisko,Lokalizacja,Notatki,CV from employeeData";
 
                 SQLiteDataAdapter connSQLLITEAdapter = new SQLiteDataAdapter(queryEmployee, con);
                 DataSet dataset = new DataSet();

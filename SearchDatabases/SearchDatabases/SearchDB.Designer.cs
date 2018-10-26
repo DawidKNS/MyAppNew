@@ -33,9 +33,9 @@
             this.textBox_imie = new System.Windows.Forms.TextBox();
             this.textBox_nazwisko = new System.Windows.Forms.TextBox();
             this.textBox_Status = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox_Stanowisko = new System.Windows.Forms.TextBox();
+            this.textBox_lokalizacja = new System.Windows.Forms.TextBox();
+            this.textBox_notatki = new System.Windows.Forms.TextBox();
             this.textBox_CV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,12 +46,12 @@
             this.label_CV = new System.Windows.Forms.Label();
             this.button_Added_New_Data = new System.Windows.Forms.Button();
             this.button_UpdataData = new System.Windows.Forms.Button();
+            this.button_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SearchDB)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_SearchDB
             // 
-            this.dataGridView_SearchDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_SearchDB.Location = new System.Drawing.Point(12, 60);
             this.dataGridView_SearchDB.Name = "dataGridView_SearchDB";
             this.dataGridView_SearchDB.Size = new System.Drawing.Size(1112, 818);
@@ -91,29 +91,29 @@
             this.textBox_Status.Size = new System.Drawing.Size(206, 26);
             this.textBox_Status.TabIndex = 5;
             // 
-            // textBox4
+            // textBox_Stanowisko
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(1266, 156);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 26);
-            this.textBox4.TabIndex = 6;
+            this.textBox_Stanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Stanowisko.Location = new System.Drawing.Point(1266, 156);
+            this.textBox_Stanowisko.Name = "textBox_Stanowisko";
+            this.textBox_Stanowisko.Size = new System.Drawing.Size(206, 26);
+            this.textBox_Stanowisko.TabIndex = 6;
             // 
-            // textBox5
+            // textBox_lokalizacja
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox5.Location = new System.Drawing.Point(1266, 188);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 26);
-            this.textBox5.TabIndex = 7;
+            this.textBox_lokalizacja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_lokalizacja.Location = new System.Drawing.Point(1266, 188);
+            this.textBox_lokalizacja.Name = "textBox_lokalizacja";
+            this.textBox_lokalizacja.Size = new System.Drawing.Size(206, 26);
+            this.textBox_lokalizacja.TabIndex = 7;
             // 
-            // textBox6
+            // textBox_notatki
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox6.Location = new System.Drawing.Point(1266, 220);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(206, 26);
-            this.textBox6.TabIndex = 8;
+            this.textBox_notatki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_notatki.Location = new System.Drawing.Point(1266, 220);
+            this.textBox_notatki.Name = "textBox_notatki";
+            this.textBox_notatki.Size = new System.Drawing.Size(206, 26);
+            this.textBox_notatki.TabIndex = 8;
             // 
             // textBox_CV
             // 
@@ -201,6 +201,7 @@
             this.button_Added_New_Data.TabIndex = 17;
             this.button_Added_New_Data.Text = "Added New Data";
             this.button_Added_New_Data.UseVisualStyleBackColor = true;
+            this.button_Added_New_Data.Click += new System.EventHandler(this.button_Added_New_Data_Click);
             // 
             // button_UpdataData
             // 
@@ -211,11 +212,21 @@
             this.button_UpdataData.Text = "Update Data";
             this.button_UpdataData.UseVisualStyleBackColor = true;
             // 
+            // button_Delete
+            // 
+            this.button_Delete.Location = new System.Drawing.Point(1266, 373);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(206, 23);
+            this.button_Delete.TabIndex = 19;
+            this.button_Delete.Text = "Delete Data";
+            this.button_Delete.UseVisualStyleBackColor = true;
+            // 
             // SearchDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1487, 890);
+            this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_UpdataData);
             this.Controls.Add(this.button_Added_New_Data);
             this.Controls.Add(this.label_CV);
@@ -226,9 +237,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_CV);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox_notatki);
+            this.Controls.Add(this.textBox_lokalizacja);
+            this.Controls.Add(this.textBox_Stanowisko);
             this.Controls.Add(this.textBox_Status);
             this.Controls.Add(this.textBox_nazwisko);
             this.Controls.Add(this.textBox_imie);
@@ -251,9 +262,9 @@
         private System.Windows.Forms.TextBox textBox_imie;
         private System.Windows.Forms.TextBox textBox_nazwisko;
         private System.Windows.Forms.TextBox textBox_Status;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox_Stanowisko;
+        private System.Windows.Forms.TextBox textBox_lokalizacja;
+        private System.Windows.Forms.TextBox textBox_notatki;
         private System.Windows.Forms.TextBox textBox_CV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -264,6 +275,7 @@
         private System.Windows.Forms.Label label_CV;
         private System.Windows.Forms.Button button_Added_New_Data;
         private System.Windows.Forms.Button button_UpdataData;
+        private System.Windows.Forms.Button button_Delete;
     }
 }
 
